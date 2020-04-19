@@ -2,33 +2,84 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Test</title>
+    <title></title>
+    <style class="before-edits">
+      #next::before{
+        color: white;
+      }
+      #back::before{
+        color: white;
+      }
+    </style>
     <script src="https://kit.fontawesome.com/578b68b184.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
-    <link href="css/Main.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" rel="stylesheet">
+    <link href="css/main-layout.css" rel="stylesheet" type="text/css">
+    <script>
+      var slidesNum = 4;
+      var lowest = 1;
+
+      var current = 1;
+    </script>
+    <script src="js/slides.js"></script>
   </head>
   <body>
-    <div class="nav-wrapper">
-      <div class="nav">
-        <div class="image-area">
-          <img src="imgs/test-img.png" alt="Test Image" width="100%" class="flip"/>
-          <div class="personal-info">
-            This is a text set of text
+    <ul class="sidebar">
+        <li class="sidebar-item">
+          <div class="personal-wrapper">
+            <div class="photo-container">
+              <img src="https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" alt="Test Image" class="flip"/>
+            </div>
+            <div class="info">
+              <ul class="personal-links">
+                <li><a href="#"><i class="far fa-envelope"></i></a></li>
+                <li><a href="#"><i class="fab fa-github-square"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+              </ul>
+            </div>
           </div>
-        </div>
-        <div class="navigation">
-          <a href="#" class="selected"><i class="fas fa-home fa-fw"></i> Home</a>
-          <a href="#"><i class="fas fa-comments"></i> Leave a message</a>
-          <a href="#"><i class="fas fa-tags fa-fw"></i> Categories</a>
-          <a href="#"><i class="fas fa-archive fa-fw"></i> Archive</a>
-          <a href="#"><i class="fas fa-coffee fa-fw"></i> Donate</a>
-        </div>
-        <div class="general-info">
+        </li>
+        <li class="sidebar-item">
+          <ul class="navigation">
+            <li class="nav-item selected"><a href="#"><i class="fas fa-home fa-fw"></i> Home</a></li>
+            <li class="nav-item"><a href="#"><i class="fas fa-comments"></i> Leave a message</a></li>
+            <li class="nav-item"><a href="#"><i class="fas fa-tags fa-fw"></i> Categories</a></li>
+            <li class="nav-item"><a href="#"><i class="fas fa-archive fa-fw"></i> Archive</a></li>
+            <li class="nav-item"><a href="#"><i class="fas fa-coffee fa-fw"></i> Donate</a></li>
+          </ul>
+    </ul>
 
+    <input type="checkbox" id="sidebar-trigger" class="sidebar-trigger">
+    <label for="sidebar-trigger" class="fas fa-bars"></label>
+
+    <div class="next-back">
+      <button class="back" id="back" onclick="changePage(-1)"><i class="fas fa-angle-left" id="back" ></i></button>
+      <button class="next" id="next" onclick="changePage(1)"><i class="fas fa-angle-right" id="next" ></i></button>
+    </div>
+
+    <div class="site-wrap">
+      <div class="content">
+        <div class="slide animated slideInUp fadeIn" id="1" name="up">
+          <h1>Welcome.</h1>
+          <p>Your intro here.</p>
+        </div>
+        <div class="slide animated slideInRight fadeIn" id="2" name="up">
+          <h1>Slide 2</h1>
+          <p>Slide 2</p>
+        </div>
+        <div class="slide" id="3" name="up">
+          <h1>Slide 3</h1>
+          <p>Slide 3</p>
+        </div>
+        <div class="slide" id="4" name="up">
+          <h1>Slide 4</h1>
+          <p>Slide 4</p>
         </div>
       </div>
-    </div>
-    <div class="content-wrapper">
+      <div class="progress-bar">
+        <div class="progress" id="progress"></div>
+      </div>
     </div>
   </body>
+  <script src="js/hide-slides.js"></script>
 </html>
