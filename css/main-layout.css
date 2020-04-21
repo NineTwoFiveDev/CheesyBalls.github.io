@@ -5,6 +5,44 @@
   font-size: 1.3rem;
   color: #797979;
 }
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+::-webkit-scrollbar-button {
+  width: 12px;
+  height: 12px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #ee8e6b;
+  background-image: linear-gradient(315deg, #ee8e6b 0%, #ef6da0 74%);
+
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #ee8e6b;
+  background-image: linear-gradient(315deg, #ee8e6b 0%, #ef6da0 74%);
+
+}
+::-webkit-scrollbar-thumb:active {
+  background-color: #ee8e6b;
+  background-image: linear-gradient(315deg, #ee8e6b 0%, #ef6da0 74%);
+}
+::-webkit-scrollbar-track {
+  background: #646568;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #646568;
+}
+::-webkit-scrollbar-track:active {
+  background: #646568;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
 .sidebar {
   /* critical sizing and position styles */
   width: 13.3rem;
@@ -46,19 +84,16 @@
 
 /* Site Wrapper - Everything that isn't sidebarigation */
 .site-wrap {
-  /* Critical position and size styles */
   min-height: 100vh !important;
   min-width: 100%;
-  background-color: white; /* Needs a background or else the sidebar will show through */
   position: relative;
   top: 0;
   bottom: 100%;
   left: 0;
   z-index: 1;
-
-  /* non-critical apperance styles */
   padding: 4rem;
-  background-color: #36393F;
+  background-color: #000000;
+  background-image: linear-gradient(147deg, #000000 0%, #252525 74%);
 }
 
 /* sidebar Trigger */
@@ -133,19 +168,37 @@ html, body { height: 100%; width: 100%;}
   transform: rotateY(0);
 }
 
-.personal-links{
+.info{
   position: absolute;
-  top: 11rem;
-  left: 2.4rem;
+  top: 2.5rem;
+  width: 10rem;
+}
+.info .text{
+  width: 9rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 8rem;
+  font-size: 0.7rem;
+  overflow-y: auto;
+  word-wrap: break-word;
+}
+
+.personal-links{
+  padding-top: 0.3rem;
+  padding-left: 0.1rem;
   z-index: 1;
   text-decoration: none;
   list-style-type: none;
   list-style: none;
+  text-align: center;
 }
 .personal-links li{
   display: inline-block;
 }
 .personal-links li *{ color: white; }
+.personal-links li:hover *{
+  color: #7289DA;
+}
 
 @media only screen
   and (min-device-width: 1024px)
