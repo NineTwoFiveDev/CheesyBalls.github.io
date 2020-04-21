@@ -6,7 +6,7 @@ xhttp.onreadystatechange = function() {
   myFunction(this);
   }
 };
-xhttp.open("GET", "../posts/Posts.xml", true);
+xhttp.open("GET", "../blog/Posts.xml", true);
 xhttp.send();
 
 function myFunction(populate) {
@@ -47,7 +47,7 @@ function myFunction(populate) {
   for(var cat in posts){
     page += "<h1>" + cat + "</h1>";
     for(var i = 0; i < posts[cat].length; i++){
-      page += "<a class=\"post\" href=\"../posts/" + posts[cat][i][1] + ".html\">" + posts[cat][i][0] + "</a>"
+      page += "<a class=\"post\" href=\"../blog/?post=" + posts[cat][i][1] + "\">" + posts[cat][i][0] + "</a>"
     }
   }
   page += "</div>";
