@@ -4,44 +4,10 @@
   font-family: 'Inconsolata', monospace;
   font-size: 1.3rem;
   color: #797979;
+  scrollbar-color: #ee8e6b ;
 }
-::-webkit-scrollbar {
-  width: 3px;
-  height: 3px;
-}
-::-webkit-scrollbar-button {
-  width: 12px;
-  height: 12px;
-}
-::-webkit-scrollbar-thumb {
-  background-color: #ee8e6b;
-  background-image: linear-gradient(315deg, #ee8e6b 0%, #ef6da0 74%);
-
-  border: 0px none #ffffff;
-  border-radius: 50px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background-color: #ee8e6b;
-  background-image: linear-gradient(315deg, #ee8e6b 0%, #ef6da0 74%);
-
-}
-::-webkit-scrollbar-thumb:active {
-  background-color: #ee8e6b;
-  background-image: linear-gradient(315deg, #ee8e6b 0%, #ef6da0 74%);
-}
-::-webkit-scrollbar-track {
-  background: #646568;
-  border: 0px none #ffffff;
-  border-radius: 50px;
-}
-::-webkit-scrollbar-track:hover {
-  background: #646568;
-}
-::-webkit-scrollbar-track:active {
-  background: #646568;
-}
-::-webkit-scrollbar-corner {
-  background: transparent;
+.simplebar-scrollbar::before {
+  background: linear-gradient(315deg, #ee8e6b 0%, #ef6da0 74%);
 }
 .sidebar {
   /* critical sizing and position styles */
