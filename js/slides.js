@@ -20,23 +20,51 @@
           }
         }
       }
+      var inProgress = false;
       function changePage(direction){
-          var cur = document.getElementById(current);
+          if(inProgress)
+            return;
+
+          inProgress = true;
           var bar = document.getElementById("progress");
-          var next;
+
           if(direction > 0 && current != slidesNum){
+            const start = current;
             current = current + 1;
-            next = document.getElementById(current);
-            cur.style.display = "none";
-            next.style.display = "block";
+            const next = current;
+
+            //Animations!!
+            const nextNode = document.querySelector(".s" + next);
+
+            nextNode.classList.add('animated', 'bounceInLeft');
+            nextNode.style.display = "block";
+
+            animateCSS(".s" + start, "fadeOutUpBig",  function() {
+              test(".s" + start);
+            });
+
+
+            //Progress Bar controll
             var width = (current-1)/(slidesNum-1);
             width = width * 100;
             bar.style.width = width + "%";
           }else if(direction < 0 && current != lowest){
+            
+            const start = current;
             current = current - 1;
-            next = document.getElementById(current);
-            cur.style.display = "none";
-            next.style.display = "block";
+            const next = current;
+
+            const nextNode = document.querySelector(".s" + next);
+
+            nextNode.classList.add('animated', 'bounceInLeft');
+            nextNode.style.display = "block";
+
+            animateCSS(".s" + start, "fadeOutUpBig",  function() {
+              test(".s" + start);
+            });
+
+
+
             var width = (current-1)/(slidesNum-1);
             width = width * 100;
             bar.style.width = width + "%";
@@ -77,3 +105,21 @@
             }
           }
       }
+      function test(first){
+        const node1 = document.querySelector(first);
+        node1.style.display = "none";
+        inProgress = false;
+      }
+      function animateCSS(element, animationName, callback) {
+        const node = document.querySelector(element)
+        node.classList.add('animated', animationName)
+
+        function handleAnimationEnd() {
+            node.classList.remove('animated', animationName)
+            node.removeEventListener('animationend', handleAnimationEnd)
+
+            if (typeof callback === 'function') callback()
+        }
+
+        node.addEventListener('animationend', handleAnimationEnd)
+    }

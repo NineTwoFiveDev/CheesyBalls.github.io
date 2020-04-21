@@ -15,20 +15,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" rel="stylesheet">
     <link href="css/main-layout.css" rel="stylesheet" type="text/css">
+    <link href="css/slideshow.css" rel="stylesheet" type="text/css">
     <script>
-      var slidesNum = 4;
-      var lowest = 1;
+      var slidesNum = 4; // set the highest number that your slides go to
+      var lowest = 1; //set the lowest number they go to
 
-      var current = 1;
+      var current = 1; //set the slide to start at
     </script>
     <script src="js/slides.js"></script>
   </head>
   <body>
+
+  <input type="checkbox" id="sidebar-trigger" class="sidebar-trigger">
+  <label for="sidebar-trigger" class="fas fa-bars"></label>
+
+  <div class="next-back">
+    <button class="back" id="back" onclick="changePage(-1)"><i class="fas fa-angle-left" id="back" ></i></button>
+    <button class="next" id="next" onclick="changePage(1)"><i class="fas fa-angle-right" id="next" ></i></button>
+  </div>
     <ul class="sidebar">
         <li class="sidebar-item">
           <div class="personal-wrapper">
             <div class="photo-container">
-              <img src="https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" alt="Test Image" class="flip"/>
+              <img src="imgs/test-img.png" alt="Test Image" class="flip"/>
             </div>
             <div class="info">
               <ul class="personal-links">
@@ -41,39 +50,43 @@
         </li>
         <li class="sidebar-item">
           <ul class="navigation">
-            <li class="nav-item selected"><a href="#"><i class="fas fa-home fa-fw"></i> Home</a></li>
+            <li class="nav-item selected"><a href=""><i class="fas fa-home fa-fw"></i> Home</a></li>
             <li class="nav-item"><a href="#"><i class="fas fa-comments"></i> Leave a message</a></li>
-            <li class="nav-item"><a href="#"><i class="fas fa-tags fa-fw"></i> Categories</a></li>
-            <li class="nav-item"><a href="#"><i class="fas fa-archive fa-fw"></i> Archive</a></li>
+            <li class="nav-item"><a href="pages/categories.html"><i class="fas fa-tags fa-fw"></i> Categories</a></li>
+            <li class="nav-item"><a href="pages/archive.html"><i class="fas fa-archive fa-fw"></i> Archive</a></li>
             <li class="nav-item"><a href="#"><i class="fas fa-coffee fa-fw"></i> Donate</a></li>
           </ul>
     </ul>
 
-    <input type="checkbox" id="sidebar-trigger" class="sidebar-trigger">
-    <label for="sidebar-trigger" class="fas fa-bars"></label>
-
-    <div class="next-back">
-      <button class="back" id="back" onclick="changePage(-1)"><i class="fas fa-angle-left" id="back" ></i></button>
-      <button class="next" id="next" onclick="changePage(1)"><i class="fas fa-angle-right" id="next" ></i></button>
-    </div>
-
     <div class="site-wrap">
       <div class="content">
-        <div class="slide animated slideInUp fadeIn" id="1" name="up">
-          <h1>Welcome.</h1>
-          <p>Your intro here.</p>
-        </div>
-        <div class="slide animated slideInRight fadeIn" id="2" name="up">
-          <h1>Slide 2</h1>
-          <p>Slide 2</p>
-        </div>
-        <div class="slide" id="3" name="up">
-          <h1>Slide 3</h1>
-          <p>Slide 3</p>
-        </div>
-        <div class="slide" id="4" name="up">
-          <h1>Slide 4</h1>
-          <p>Slide 4</p>
+        <div class="slides">
+          <!--
+            Okay so, to make this as dynamic as possible i have made it so you can specify the animations
+            for each slide easiy. It goes as follows:
+
+            id="the entering animation"
+            name="the leaving animation"
+
+            no id = defaulting to fadeInUpBig
+            no name = default to fadeOutUpBig
+         -->
+          <div class="slide s1">
+            <h1>Welcome.</h1> <!-- You can fill these with whatever html you'd like. -->
+            <p>Your intro here.</p>
+          </div>
+          <div class="slide s2">
+            <h1>Slide 2</h1>
+            <p>Slide 2</p>
+          </div>
+          <div class="slide s3">
+            <h1>Slide 3</h1>
+            <p>Slide 3</p>
+          </div>
+          <div class="slide s4">
+            <h1>Slide 4</h1>
+            <p>Slide 4</p>
+          </div>
         </div>
       </div>
       <div class="progress-bar">

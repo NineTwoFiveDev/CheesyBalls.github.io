@@ -1,0 +1,28 @@
+<XML>
+  <BLOGPOSTS>
+    <BPOST>
+      <Title>Blog post 1</Title>
+      <FileName>test-post-1</FileName>
+      <DateAdded>04-19-20</DateAdded>
+      <BlogCategory>School</BlogCategory>
+    </BPOST>
+    <BPOST>
+      <Title>Blog post 2</Title>
+      <FileName>test-post-2</FileName>
+      <DateAdded>04-20-20</DateAdded>
+      <BlogCategory>Home</BlogCategory>
+    </BPOST>
+    <BPOST>
+      <Title>Blog post 3</Title>
+      <FileName>test-post-3</FileName>
+      <DateAdded>04-22-20</DateAdded>
+      <BlogCategory>Work</BlogCategory>
+    </BPOST>
+    <BPOST>
+      <Title>Blog post 4</Title>
+      <FileName>test-post-4</FileName>
+      <DateAdded>04-21-20</DateAdded>
+      <BlogCategory>Testing</BlogCategory>
+    </BPOST>
+  </BLOGPOSTS>
+</XML>

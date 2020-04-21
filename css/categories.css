@@ -1,0 +1,19 @@
+.content{
+  width: 60rem;
+  background-color: #21252B;
+  margin: 0 auto;
+  padding: 1rem;
+  border-radius: 10px;
+}
+.content h1{
+  font-size: 2rem;
+  color: white;
+}
+.content a{
+  display: block;
+  text-decoration: none;
+  margin: 0.2rem 0.2rem 0.2rem 1rem;
+}
+.content a:hover{
+  color: #E2C08D;
+}

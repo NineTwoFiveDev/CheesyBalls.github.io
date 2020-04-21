@@ -7,14 +7,16 @@
 }
 .sidebar {
   /* critical sizing and position styles */
-  width: 100%;
+  width: 13.3rem;
   height: 100%;
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
-  left: 0;
-  z-index: 0;
+  left: -13.3rem;
+  z-index: 100;
+
+  transition: left 0.2s;
 
   /* non-critical appearance styles */
   list-style: none;
@@ -95,38 +97,8 @@ label[for="sidebar-trigger"] {
 .sidebar-trigger:checked ~ .site-wrap {
   left: 13.3rem;
 }
-
-.next-back{
-  position: absolute;
-  z-index: 3;
-  bottom: 1rem;
-  right: 1rem;
-  cursor: default;
-}
-.next-back *{
-  font-size: 2.5rem;
-  color: white;
-  background: none;
-  border: none;
-  outline: none;
-}
-.next, .back{
-  cursor: pointer;
-}
-.progress-bar{
-  position: absolute;
+.sidebar-trigger:checked ~ .sidebar {
   left: 0;
-  bottom: 0;
-  background-color: white;
-  width: 100%;
-  height: 3px;
-  z-index: 13;
-}
-.progress{
-  background-color: #21252B;
-  height: 4px;
-  width: 0;
-  transition: width 0.5s;
 }
 .selected{
   background-color: #373737;
@@ -175,49 +147,6 @@ html, body { height: 100%; width: 100%;}
 }
 .personal-links li *{ color: white; }
 
-.site-wrap .content{
-  text-align: center;
-  -webkit-animation: fadein 5s;
-  -moz-animation: fadein 5s;
-  -ms-animation: fadein 5s;
-  -o-animation: fadein 5s;
-  animation: fadein 5s;
-}
-
-.site-wrap .content h1{
-  margin-top: auto;
-  margin-bottom: auto;
-  font-size: 10rem;
-}
-
-@keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
-/* Firefox < 16 */
-@-moz-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
-/* Safari, Chrome and Opera > 12.1 */
-@-webkit-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
-/* Internet Explorer */
-@-ms-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
-/* Opera < 12.1 */
-@-o-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
 @media only screen
   and (min-device-width: 1024px)
   and (max-device-width: 1366px)
