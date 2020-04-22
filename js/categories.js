@@ -3,13 +3,13 @@ var content = document.getElementById("content");
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
-  myFunction(this);
+  populateCats(this);
   }
 };
 xhttp.open("GET", "../blog/Posts.xml", true);
 xhttp.send();
 
-function myFunction(populate) {
+function populateCats(populate) {
   var xmlDoc = populate.responseXML;
 
   var page="<div class=\"posts\">";

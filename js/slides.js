@@ -27,6 +27,8 @@ if(current == lowest){
 var slds = document.getElementsByClassName("slides");
 window.addEventListener('wheel', function(event)
 {
+  console.log(current);
+  console.log(isOver);
   if(isOver){
     if (event.deltaY < 0){ changePage(-1); }
     else if (event.deltaY > 0) { changePage(1); }
@@ -35,13 +37,14 @@ window.addEventListener('wheel', function(event)
 
 var inProgress = false;
 function changePage(direction){
+    console.log(inProgress);
     if(inProgress)
       return;
 
-    inProgress = true;
     var bar = document.getElementById("progress");
 
     if(direction > 0 && current != slidesNum){
+      inProgress = true;
       const start = current;
       current = current + 1;
       const next = current;
@@ -62,7 +65,7 @@ function changePage(direction){
       width = width * 100;
       bar.style.width = width + "%";
     }else if(direction < 0 && current != lowest){
-
+      inProgress = true;
       const start = current;
       current = current - 1;
       const next = current;

@@ -1,0 +1,19 @@
+<XML>
+  <settings>
+    <personal>
+      <aboutYou>Write a little about yourself! Anything written here will pe positioned behind your pfp.</aboutYou>
+      <link>
+        <icon>far fa-envelope</icon> <!-- icon names can be found here  https://fontawesome.com/icons?d=gallery&m=free -->
+        <location>mailto:john@example.com</location> <!-- the actual link. for email do mailto:john@example.com -->
+      </link>
+      <link>
+        <icon>fab fa-github-square</icon>
+        <location>https://github.com/NineTwoFiveDev/</location>
+      </link>
+      <link>
+        <icon>fab fa-linkedin</icon>
+        <location>https://www.linkedin.com/in/jacob-gilliam-3834a71a2/</location>
+      </link>
+    </personal>
+  </settings>
+</XML>
